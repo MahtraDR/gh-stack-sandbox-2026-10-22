@@ -1,0 +1,9 @@
+name: CI
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "base=${{ github.base_ref }} stack=${{ toJSON(github.event.pull_request.stack) }}"
